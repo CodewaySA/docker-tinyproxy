@@ -1,21 +1,17 @@
-FROM codewaysa/alpine:3.13.5_20210428
+FROM codewaysa/alpine:3.14.0_20210709
 
-LABEL io.github.tinyproxy.version="1.10.0"
+LABEL io.github.tinyproxy.version="1.11.0"
 LABEL image-name="codewaysa/tinyproxy"
 LABEL maintainer="l.lesinigo@codeway.ch"
 
 # add Tinyproxy
-RUN apk add --no-cache tinyproxy=1.10.0-r3 && \
+RUN apk add --no-cache tinyproxy=1.11.0-r0 && \
     cp /etc/tinyproxy/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.dist && \
     printf '    User tinyproxy\n\
     Group tinyproxy\n\
     Port 3128\n\
     LogLevel Connect\n\
     MaxClients 100\n\
-    MinSpareServers 5\n\
-    MaxSpareServers 20\n\
-    StartServers 5\n\
-    MaxRequestsPerChild 100\n\
     DisableViaHeader Yes\n'\
     > /etc/tinyproxy/tinyproxy.conf
 
