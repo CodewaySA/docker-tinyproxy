@@ -1,4 +1,4 @@
-FROM codewaysa/alpine:3.14.0_20210709
+FROM codewaysa/alpine:3.15.0_20220131
 
 LABEL io.github.tinyproxy.version="1.11.0"
 LABEL image-name="codewaysa/tinyproxy"
