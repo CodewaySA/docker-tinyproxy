@@ -1,11 +1,11 @@
-FROM codewaysa/alpine:3.17.2_20230227
+FROM docker.io/codewaysa/alpine:3.18.3_20230912
 
 LABEL io.github.tinyproxy.version="1.11.1"
 LABEL image-name="codewaysa/tinyproxy"
 LABEL maintainer="l.lesinigo@codeway.ch"
 
 # add Tinyproxy
-RUN apk add --no-cache tinyproxy=1.11.1-r2 && \
+RUN apk add --no-cache tinyproxy=1.11.1-r3 && \
     cp /etc/tinyproxy/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf.dist && \
     printf '    User tinyproxy\n\
     Group tinyproxy\n\
